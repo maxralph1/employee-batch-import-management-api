@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
-            // $table->ulid('id')->primary();
+            $table->ulid('id')->primary();
             // $table->foreignUlid('user_id')->constrained();
             // $table->id();
-            $table->string('id');
+            $table->string('employee_id');
             $table->string('username');
             $table->string('name_prefix');
             $table->string('first_name');

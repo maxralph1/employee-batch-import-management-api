@@ -38,7 +38,7 @@ class EmployeeController extends Controller
             }
 
             Employee::create([
-                'id' => $data[0],
+                'employee_id' => $data[0],
                 'name_prefix' => $data[1],
                 'first_name' => $data[2],
                 'middle_name_initial' => $data[3],
@@ -66,7 +66,10 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        //
+        // $employee_found = Employee::where('id', $employee);
+
+        // return new EmployeeResource($employee_found);
+        return new EmployeeResource($employee);
     }
 
     /**
@@ -82,6 +85,9 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        // $employee_found = Employee::where('id', $employee);
+
+        // $employee_found->delete();
+        $employee->delete();
     }
 }

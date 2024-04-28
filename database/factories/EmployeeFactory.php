@@ -19,6 +19,7 @@ class EmployeeFactory extends Factory
     {
         return [
             'user_id' => User::all()->random()->id,
+            'employee_id' => fake()->numberBetween($min = 100000, $max = 900000),
             'username' => fake()->userName(),
             'name_prefix' => fake()->title(),
             'first_name' => fake()->firstName(),
